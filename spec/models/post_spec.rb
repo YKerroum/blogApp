@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-   context 'validations' do
+  context 'validations' do
     it 'title should not be too long' do
       post = Post.new(title: 'a' * 1001)
       expect(post).to_not be_valid
