@@ -11,10 +11,9 @@ class Post < ApplicationRecord
            foreign_key: :post_id,
            class_name: :Like
 
-  def update_author_posts_counter
-    author.posts_counter = author.posts.count
-    author.save
-  end
+  after_create :update_authors_counter
+  after_destroy :update_authors_counter
+  after_update :update_authors_counter
 
   def five_recent_comments
     comments.order(created_at: :desc).limit(5)

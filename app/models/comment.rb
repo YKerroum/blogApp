@@ -7,8 +7,9 @@ class Comment < ApplicationRecord
              foreign_key: :post_id,
              class_name: :Post
 
-  def update_post_comments_counter
-    post.comments_counter = post.comments.count
-    post.save
-  end
+  after_create :update_posts_counter
+  after_destroy :update_posts_counter
+  after_update :update_posts_counter
+
+
 end
