@@ -1,0 +1,5 @@
+<div class="post_container">
+    <p> <%= link_to "Post ##{post.id}", user_post_path(user_id: post.author_id, id: post.id) %> </p>
+    <p class="post_preview_text"> <%= post.text %> </p>
+    <p class="post_comments_counter"> Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter%> </p>
+</div>
