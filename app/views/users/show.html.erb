@@ -1,1 +1,12 @@
-<h1> Here the information of the user <%= @user.name %> </h1>
+<%= render @user %>
+
+<div class="bio_container">
+    <p> Bio </p>
+    <p> <%= @user.bio %> </p>
+</div>
+
+<% @user.three_recent_posts.each_with_index do |post, i| %>
+  <%= render partial: 'posts/post', locals: { post: post, index: i} %>
+<% end %>
+
+<button class="see_all_posts_btn"> <%= link_to 'See all posts', user_posts_path(@user) %> </button>
