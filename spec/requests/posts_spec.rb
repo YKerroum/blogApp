@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Posts", type: :request do
+RSpec.describe 'Posts', type: :request do
   describe 'GET /users/:user_id/posts' do
     before(:each) do
       @user = User.create(name: 'user1')
