@@ -1,1 +1,15 @@
-<h1> here is the post with the id <%= @post.id %> of the user <%= @user.name%> </h1>
+<div class="post">
+<div class="post_container">
+  <p>Post #<%= @post.id %> by <%=@user.name %>
+  </p>
+  <p class="post_comments_counter"> Comments: <%= @post.comments_counter%>, Likes: <%= @post.likes_counter%></p>
+  <p><%= @post.text %></p>
+</div>
+<div class="comment_container">
+  <% @post.comments.each do |comment| %>
+    <div class="comment">
+      <p><%= comment.author.name %>: Comment <%= comment.text %></p>
+    </div>
+  <% end %>
+</div>
+</div>
