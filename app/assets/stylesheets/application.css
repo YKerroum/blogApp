@@ -74,8 +74,10 @@ a:hover {
   font-weight: 800;
 }
 
-button {
+button,
+.btn {
   width: fit-content;
+  cursor: pointer;
   padding: 0.5em;
   background-color: #007bff;
   border-radius: 5px;
@@ -87,11 +89,13 @@ button {
   margin-top: auto;
 }
 
-button:hover {
+button:hover,
+.btn:hover {
   background-color: #0069d9;
 }
 
-button:hover a {
+button:hover a,
+.btn:hover a {
   color: #fff;
 }
 
@@ -120,14 +124,35 @@ button:hover a {
 
 .comment_container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 20px;
   padding: 20px;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.comment {
+  display: flex;
+  justify-content: space-between;
+}
+
 .post {
   display: flex;
   flex-direction: column;
   row-gap: 5px;
+}
+
+.engagement_container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  column-gap: 20px;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
