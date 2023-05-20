@@ -12,4 +12,10 @@
     </div>
   <% end %>
 </div>
+<div class="engagement_container">
+  <%= form_with model: @like, url: user_post_likes_path(user_id: @post.author.id, post_id: @post.id), local: true do |f| %>
+        <%= f.submit "like", class: "btn" %>
+  <% end %>
+  <button type="button" class="btn"><%= link_to "add new comment", new_user_post_comment_path(user_id: @post.author.id, post_id: @post.id)  %></button>
+  </div>
 </div>
